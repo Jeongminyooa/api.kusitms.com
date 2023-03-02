@@ -1,4 +1,4 @@
-package com.kusitms.website.dto;
+package com.kusitms.website.dto.meetup;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.kusitms.website.domain.project.MeetupProject;

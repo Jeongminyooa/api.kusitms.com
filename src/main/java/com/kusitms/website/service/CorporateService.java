@@ -1,8 +1,8 @@
 package com.kusitms.website.service;
 
 import com.kusitms.website.domain.project.CorporateProject;
-import com.kusitms.website.dto.CorporateDetailResponse;
-import com.kusitms.website.dto.CorporateResponse;
+import com.kusitms.website.dto.corporate.CorporateDetailResponse;
+import com.kusitms.website.dto.corporate.CorporateResponse;
 import com.kusitms.website.repository.CorporateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

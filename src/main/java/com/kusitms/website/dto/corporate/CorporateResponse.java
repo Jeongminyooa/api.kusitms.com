@@ -1,4 +1,4 @@
-package com.kusitms.website.dto;
+package com.kusitms.website.dto.corporate;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;

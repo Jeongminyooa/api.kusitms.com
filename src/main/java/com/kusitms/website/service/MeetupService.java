@@ -1,8 +1,8 @@
 package com.kusitms.website.service;
 
 import com.kusitms.website.domain.project.MeetupProject;
-import com.kusitms.website.dto.MeetupResponse;
-import com.kusitms.website.dto.MeetupDetailResponse;
+import com.kusitms.website.dto.meetup.MeetupResponse;
+import com.kusitms.website.dto.meetup.MeetupDetailResponse;
 import com.kusitms.website.repository.MeetupRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

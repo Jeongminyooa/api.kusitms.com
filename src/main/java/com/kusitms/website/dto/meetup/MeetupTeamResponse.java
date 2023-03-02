@@ -1,4 +1,4 @@
-package com.kusitms.website.dto;
+package com.kusitms.website.dto.meetup;
 
 import com.kusitms.website.domain.project.MeetupTeam;
 import io.swagger.v3.oas.annotations.media.Schema;

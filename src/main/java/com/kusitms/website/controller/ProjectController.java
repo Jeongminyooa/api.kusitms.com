@@ -1,10 +1,10 @@
 package com.kusitms.website.controller;
 
 import com.kusitms.website.common.BaseResponse;
-import com.kusitms.website.dto.CorporateDetailResponse;
-import com.kusitms.website.dto.CorporateResponse;
-import com.kusitms.website.dto.MeetupDetailResponse;
-import com.kusitms.website.dto.MeetupResponse;
+import com.kusitms.website.dto.corporate.CorporateDetailResponse;
+import com.kusitms.website.dto.corporate.CorporateResponse;
+import com.kusitms.website.dto.meetup.MeetupDetailResponse;
+import com.kusitms.website.dto.meetup.MeetupResponse;
 import com.kusitms.website.service.CorporateService;
 import com.kusitms.website.service.MeetupService;
 import io.swagger.v3.oas.annotations.Operation;
