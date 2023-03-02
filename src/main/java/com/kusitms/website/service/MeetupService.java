@@ -1,8 +1,8 @@
 package com.kusitms.website.service;
 
 import com.kusitms.website.domain.project.MeetupProject;
-import com.kusitms.website.dto.MeetupListResponse;
 import com.kusitms.website.dto.MeetupResponse;
+import com.kusitms.website.dto.MeetupDetailResponse;
 import com.kusitms.website.repository.MeetupRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,23 +20,23 @@ public class MeetupService {
     private final int MAX_SIZE_ONE_LINE_INTRO = 33;
 
     @Transactional(readOnly = true)
-    public MeetupListResponse getMeetupProjects() {
+    public MeetupResponse getMeetupProjects() {
         List<MeetupProject> findProjects = meetupRepository.findAllByOrderByCardinalDesc();
 
-        List<MeetupResponse> meetupResponses = findProjects.stream()
-                .map(p -> new MeetupResponse(p, false))
+        List<MeetupDetailResponse> meetupDetailResponses = findProjects.stream()
+                .map(p -> new MeetupDetailResponse(p, false))
                 .collect(Collectors.toList());
 
-        return MeetupListResponse.builder()
-                .meetupCount(meetupResponses.size())
-                .meetupList(meetupResponses)
+        return MeetupResponse.builder()
+                .meetupCount(meetupDetailResponses.size())
+                .meetupList(meetupDetailResponses)
                 .build();
     }
 
     @Transactional(readOnly = true)
-    public MeetupResponse getMeetupProject(Long meetupId) {
+    public MeetupDetailResponse getMeetupProject(Long meetupId) {
         MeetupProject findProject = meetupRepository.findById(meetupId).orElseThrow();
 
-        return new MeetupResponse(findProject, true);
+        return new MeetupDetailResponse(findProject, true);
     }
 }
