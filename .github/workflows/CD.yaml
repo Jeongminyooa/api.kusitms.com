@@ -10,13 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Deploy to Heroku
+      - name : Make Properties file
         run: |
           cd ./src/main/resources
           touch ./application-prod.properties
           echo "${{ secrets.PROPERTIES_PROD }}" > ./application-prod.properties
         shell: bash
+
+      - name: Deploy to Heroku
         uses: AkhileshNS/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
