@@ -25,7 +25,6 @@ jobs:
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
           just_login : true
       - run: |
-          heroku run bash -a ${{ secrets.HEROKU_APP_NAME }}
           cd ./src/main/resources
           touch ./application-prod.properties
           echo "${{ secrets.PROPERTIES_PROD }}" > ./application-prod.properties
