@@ -15,7 +15,6 @@ jobs:
           cd ./src/main/resources
           touch ./application-prod.properties
           echo "${{ secrets.PROPERTIES_PROD }}" > ./application-prod.properties
-        shell: bash
 
       - name: Deploy to Heroku
         uses: AkhileshNS/heroku-deploy@v3.12.12
@@ -23,9 +22,3 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-          just_login : true
-      - run: |
-          cd ./src/main/resources
-          touch ./application-prod.properties
-          echo "${{ secrets.PROPERTIES_PROD }}" > ./application-prod.properties
-          
