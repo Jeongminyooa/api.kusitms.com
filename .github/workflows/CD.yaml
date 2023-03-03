@@ -11,14 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Make application-prod.properties
+      - name: Deploy to Heroku
         run: |
           cd ./src/main/resources
           touch ./application-prod.properties
           echo "${{ secrets.PROPERTIES_PROD }}" > ./application-prod.properties
         shell: bash
-
-      - name: Deploy to Heroku
         uses: AkhileshNS/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
