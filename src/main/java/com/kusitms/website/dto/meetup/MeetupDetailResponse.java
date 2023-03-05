@@ -67,7 +67,7 @@ public class MeetupDetailResponse {
             this.intro = meetup.getIntro();
             this.startDate = meetup.getStartDate();
             this.endDate = meetup.getEndDate();
-            this.team = new MeetupTeamResponse(meetup.getTeam());
+            this.team = new MeetupTeamResponse(meetup.getTeam(), meetup.getTeamName());
         }
     }
 }

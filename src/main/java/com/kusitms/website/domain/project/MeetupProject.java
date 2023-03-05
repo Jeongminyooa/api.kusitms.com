@@ -1,6 +1,7 @@
 package com.kusitms.website.domain.project;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -53,6 +54,29 @@ public class MeetupProject {
     @Column(name = "end_date", nullable = false)
     private LocalDate endDate;
 
+    @Column(name = "team_name", nullable = false)
+    private String teamName;
+
     @OneToMany(mappedBy = "meetupProject", cascade = CascadeType.ALL)
     private List<MeetupTeam> team = new ArrayList<>();
+
+    @Builder
+    public MeetupProject(int cardinal, String name, String intro, String type, String oneLineIntro,
+                         String logoUrl, String posterUrl, String instagramUrl, String githubUrl, String appUrl,
+                         LocalDate startDate, LocalDate endDate, List<MeetupTeam> team, String teamName) {
+        this.cardinal = cardinal;
+        this.name = name;
+        this.intro = intro;
+        this.type = ProjectType.valueOf(type);
+        this.oneLineIntro = oneLineIntro;
+        this.logoUrl = logoUrl;
+        this.posterUrl = posterUrl;
+        this.instagramUrl = instagramUrl;
+        this.githubUrl = githubUrl;
+        this.appUrl = appUrl;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.team = team;
+        this.teamName = teamName;
+    }
 }

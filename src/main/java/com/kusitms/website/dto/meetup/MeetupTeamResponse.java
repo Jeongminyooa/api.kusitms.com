@@ -9,7 +9,10 @@ import java.util.Collections;
 import java.util.List;
 
 @Getter
+@Schema
 public class MeetupTeamResponse {
+    @Schema(description = "팀 이름")
+    private String name;
     @Schema(description = "기획자 팀원")
     private List<String> planner;
     @Schema(description = "디자이너 팀원")
@@ -23,7 +26,12 @@ public class MeetupTeamResponse {
     @Schema(description = "ANDROID 팀원")
     private List<String> android;
 
-    public MeetupTeamResponse(List<MeetupTeam> team) {
+    public MeetupTeamResponse(List<MeetupTeam> team, String name) {
+        this.name = name;
+        getMember(team);
+    }
+
+    private void getMember(List<MeetupTeam> team) {
         for(MeetupTeam t : team) {
             switch(t.getTeam()) {
                 case PLANNER:
