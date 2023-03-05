@@ -1,9 +1,9 @@
 name: CI with Gradle
 
 on:
-  push:
+  pull_request:
     branches:
-      - feat
+      - main
 
 jobs:
   build:
