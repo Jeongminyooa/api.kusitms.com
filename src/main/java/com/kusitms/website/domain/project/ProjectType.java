@@ -14,4 +14,12 @@ public enum ProjectType {
         return name;
     }
 
+    public static ProjectType from(String name) {
+        for(ProjectType type : ProjectType.values()) {
+            if(type.getName().equals(name)) {
+                return type;
+            }
+        }
+        return null;
+    }
 }

@@ -61,13 +61,13 @@ public class MeetupProject {
     private List<MeetupTeam> team = new ArrayList<>();
 
     @Builder
-    public MeetupProject(int cardinal, String name, String intro, String type, String oneLineIntro,
+    public MeetupProject(int cardinal, String name, String intro, ProjectType type, String oneLineIntro,
                          String logoUrl, String posterUrl, String instagramUrl, String githubUrl, String appUrl,
-                         LocalDate startDate, LocalDate endDate, List<MeetupTeam> team, String teamName) {
+                         LocalDate startDate, LocalDate endDate, String teamName) {
         this.cardinal = cardinal;
         this.name = name;
         this.intro = intro;
-        this.type = ProjectType.valueOf(type);
+        this.type = type;
         this.oneLineIntro = oneLineIntro;
         this.logoUrl = logoUrl;
         this.posterUrl = posterUrl;
@@ -76,7 +76,10 @@ public class MeetupProject {
         this.appUrl = appUrl;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.team = team;
         this.teamName = teamName;
+    }
+
+    public void updateTeam(List<MeetupTeam> team) {
+        this.team = team;
     }
 }
