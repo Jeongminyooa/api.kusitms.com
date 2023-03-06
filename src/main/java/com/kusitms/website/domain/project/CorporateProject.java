@@ -22,5 +22,8 @@ public class CorporateProject {
     @Column(name = "logo_url")
     private String logoUrl;
 
+    @Column(name = "banner_url")
+    private String bannerUrl;
+
     private String category;
 }
