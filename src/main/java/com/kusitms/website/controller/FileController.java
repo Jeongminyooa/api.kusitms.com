@@ -1,7 +1,6 @@
 package com.kusitms.website.controller;
 
 import com.kusitms.website.common.BaseResponse;
-import com.kusitms.website.dto.file.FileRequest;
 import com.kusitms.website.service.S3Service;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
