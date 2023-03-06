@@ -8,6 +8,8 @@ import lombok.Getter;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.kusitms.website.util.S3Util.s3Url;
+
 @Getter
 @Schema
 public class CorporateDetailResponse {
@@ -25,13 +27,17 @@ public class CorporateDetailResponse {
     private String logoUrl;
     @Schema(description = "과제 분류")
     private List<String> category;
+    @JsonProperty("banner_url")
+    @Schema(description = "배너 이미지 URL")
+    private String bannerUrl;
 
     public CorporateDetailResponse(CorporateProject corporate) {
         this.corporateId = corporate.getCorporateId();
         this.cardinal = corporate.getCardinal();
         this.name = corporate.getName();
         this.content = corporate.getContent();
-        this.logoUrl = corporate.getLogoUrl();
+        this.logoUrl = s3Url + corporate.getLogoUrl();
+        this.bannerUrl = s3Url + corporate.getBannerUrl();
         this.category = splitCategory(corporate.getCategory());
     }
 

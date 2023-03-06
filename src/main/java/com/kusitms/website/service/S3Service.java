@@ -54,7 +54,7 @@ public class S3Service {
             e.printStackTrace();
         }
 
-        return amazonS3Client.getUrl(bucket, fileName).toString();
+        return fileName;
     }
 
     private String randomFileName(MultipartFile file, String dirName) {

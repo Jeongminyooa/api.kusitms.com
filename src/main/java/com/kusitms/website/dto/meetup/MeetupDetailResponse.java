@@ -7,6 +7,8 @@ import lombok.Getter;
 
 import java.time.LocalDate;
 
+import static com.kusitms.website.util.S3Util.s3Url;
+
 @Getter
 @Schema
 public class MeetupDetailResponse {
@@ -55,8 +57,8 @@ public class MeetupDetailResponse {
         this.meetupId = meetup.getMeetupId();
         this.cardinal = meetup.getCardinal();
         this.name = meetup.getName();
-        this.posterUrl = meetup.getPosterUrl();
-        this.logoUrl = meetup.getLogoUrl();
+        this.posterUrl = s3Url + meetup.getPosterUrl();
+        this.logoUrl = s3Url + meetup.getLogoUrl();
         this.oneLineIntro = meetup.getOneLineIntro();
         this.instagramUrl = meetup.getInstagramUrl();
         this.githubUrl = meetup.getGithubUrl();
