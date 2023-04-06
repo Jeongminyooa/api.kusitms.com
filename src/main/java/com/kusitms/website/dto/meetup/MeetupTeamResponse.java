@@ -24,7 +24,7 @@ public class MeetupTeamResponse {
     @Schema(description = "IOS 팀원")
     private List<String> ios;
     @Schema(description = "ANDROID 팀원")
-    private List<String> android;
+    private List<String> aos;
 
     public MeetupTeamResponse(List<MeetupTeam> team, String name) {
         this.name = name;
@@ -65,10 +65,10 @@ public class MeetupTeamResponse {
                     ios.add(t.getName());
                     break;
                 case ANDROID:
-                    if(android == null) {
-                        android = new ArrayList<>();
+                    if(aos == null) {
+                        aos = new ArrayList<>();
                     }
-                    android.add(t.getName());
+                    aos.add(t.getName());
                     break;
             }
         }
@@ -82,8 +82,8 @@ public class MeetupTeamResponse {
         if(ios != null) {
             Collections.sort(ios);
         }
-        if(android != null) {
-            Collections.sort(android);
+        if(aos != null) {
+            Collections.sort(aos);
         }
     }
 }
